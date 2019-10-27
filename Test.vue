@@ -12,10 +12,10 @@
         </view>
 
         <view class="data">
-            <text >Name | Price | Store</text>
+            <text>Name | Price | Store</text>
             <flat-list :style="{ height: 200, overflow: 'hidden'}" :data=items>
                 <view render-prop-fn="renderItem">
-                    <text class="row">{{args.item.name}} | {{args.item.price}} | {{args.item.store}}</text>
+                    <text>{{args.item.name}} | {{args.item.price}} | {{args.item.store}}</text>
                 </view>
             </flat-list>
         </view>
@@ -36,7 +36,7 @@ export default {
     methods: {
         async getSearch() {
             this.items = await SheetService.getSearch(this.search);
-        }
+        },
     }
 };
 </script>
